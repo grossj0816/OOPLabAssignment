@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "ProductList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section headerlinks{
+    <link href="~/Content/productspg.css" rel="stylesheet" />
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-2 col-md-6 offset-md-2 col-sm-12">
+            <h4 class="h4Move">Products List</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 offset-lg-2 col-md-6 offset-md-2 col-sm-12">
+            <table class="tableSpacing">
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Category ID</th>
+                    <th>Supplier ID</th>
+                    <th>Unit Price</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                @foreach (var indProds in ViewBag.Products)
+        {
+            <tr>
+                <td>@indProds.ProductID</td>
+                <td>@indProds.ProductName</td>
+                <td>@indProds.CategoryID</td>
+                <td>@indProds.SupplierID</td>
+                <td>@indProds.UnitPrice</td>
+                <td>
+                    <form action="DeleteProduct" method="post">
+                        <input type="hidden" name="idDelete" value="@indProds.ProductID" />
+                        <button class="btn btn-primary btn-lg" type="submit">
+                            Delete Products
+                        </button>
+                    </form>
+                </td>
+                <td>
+                    <form action="UpdateProductForm" method="post">
+                        <input type="hidden" name="idUpdate" value="@indProds.ProductID" />
+                        <button class="btn btn-primary btn-lg" type="submit">
+                            Update Products
+                        </button>
+                    </form>
+                </td>
+            </tr>
+}
+            </table>
+            <a href="AddProductForm">Add Products</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "UpdateProductForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section headerlinks
+{
+    <link href="~/Content/productspg.css" rel="stylesheet" />
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-2 col-md-6 offset-md-2 col-sm-12">
+            <h2>Update Product Form</h2>
+        </div>
+        <div class="col-lg-6 offset-lg-2 col-md-6 offset-md-2 col-sm-12">
+            <form action="UpdateProduct" method="post">
+                @foreach (var si in ViewBag.SelectedItem)
+                {
+                    <input type="hidden" name="id" value="@si.ProductID" />
+                    <label>Product Name</label>
+                    <input type="text" name="name" value="@si.ProductName" />
+                    <br />
+                    <label>Category ID</label>
+                    <input type="text" name="catid" value="@si.CategoryID" />
+                    <br />
+                    <label>Supplier ID</label>
+                    <input type="text" name="supid" value="@si.SupplierID" />
+                    <br />
+                    <label>Unit Price</label>
+                    <input type="text" name="price" value="@si.UnitPrice" />
+                    <br />
+                }
+                <label>Submit</label>
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+    </div>
+</div>
+

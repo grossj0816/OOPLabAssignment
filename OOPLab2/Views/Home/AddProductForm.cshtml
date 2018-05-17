@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "AddProductForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section headerlinks
+{
+    <link href="~/Content/productspg.css" rel="stylesheet" />
+}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-2 col-md-6 offset-md-2 col-sm-12">
+            <h4 class="h4Move">Add Product Form</h4>
+        </div>
+        <div class="col-lg-6 offset-lg-2 col-md-6 offset-md-2 col-sm-12">
+            <p>Errors: 
+            @ViewBag.ReadErrors</p>
+
+            <form action="AddProduct" method="post">
+                <label>Product Name</label>
+                <input type="text" name="name"  value="@ViewBag.Name"/>
+                <br />
+                <label>Category ID</label>
+                <input type="text" name="catid" value="@ViewBag.CatID"/>
+                <br />
+                <label>Supplier ID</label>
+                <input type="text" name="supid" value="@ViewBag.SupID"/>
+                <br />
+                <label>Unit Price</label>
+                <input type="text" name="price" value="@ViewBag.Price"/>
+                <br />
+                <label>Submit</label>
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+    </div>
+</div>
+

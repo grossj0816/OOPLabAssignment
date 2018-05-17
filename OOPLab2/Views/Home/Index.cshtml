@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section headerlinks
+{
+<link href="~/Content/indexpg.css" rel="stylesheet" />
+}
+@* Jumbotron *@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-7 offset-lg-2 col-md-6 offset-md-3 col-sm-5">
+            <div class="jumbotron">
+                <h3 class="text-center">Welcome To Northwind Traders!</h3>
+                <p class="lead text-center">Go See Our Products</p>
+                <hr class="my-4">
+                <div class="row justify-content-lg-center justify-content-md-center justify-content-sm-center">
+                    <form action="ProductList" method="post">
+                        <button class="btn btn-primary btn-lg" type="submit">
+                            Go To Products
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
